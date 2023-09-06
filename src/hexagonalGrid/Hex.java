@@ -1,6 +1,4 @@
 package hexagonalGrid;
-import java.awt.Color;
-import java.awt.Graphics;
 
 public class Hex {
     public static final double SIZE = 10;
@@ -36,13 +34,8 @@ public class Hex {
         return y;
     }
 
-    public void draw(Graphics g) {
-        g.setColor(Color.BLACK);
-        for (int i = 0; i < corners.length; i++) {
-            var pointOne = corners[i];
-            var pointTwo = corners[(i + 1) % corners.length];
-            g.drawLine(pointOne.getX(), pointOne.getY(), pointTwo.getX(), pointTwo.getY());
-        }
+    public Point[] getCorners() {
+        return corners;
     }
 
     @Override

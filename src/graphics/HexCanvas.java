@@ -5,10 +5,10 @@ import java.awt.Graphics;
 import hexagonalGrid.HexGrid;
 
 public class HexCanvas extends Canvas{
-    private HexGrid gird;
+    private HexGridRenderer gird;
 
-    public HexCanvas(HexGrid gird) {
-        this.gird = gird;
+    public HexCanvas(HexGrid hexGrid) {
+        this.gird = new HexGridRenderer(hexGrid);
     }
     
     @Override

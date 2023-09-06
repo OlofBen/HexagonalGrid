@@ -1,5 +1,4 @@
 package hexagonalGrid;
-import java.awt.Graphics;
 
 public class HexGrid {
     public static final double SPACING_COL = Hex.SIZE * Math.sqrt(3);
@@ -43,18 +42,19 @@ public class HexGrid {
         return sb.toString();
     }
 
-    public void draw(Graphics g){
-        forallIndex((row, col) -> {
-            var hex = get(row, col);
-            hex.draw(g);
-        });
-    }
-
-    private void forallIndex(IndexOperation operation) {
+    public void forallIndex(IndexOperation operation) {
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 operation.execute(row, col);
             }
         }
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
     }
 }
