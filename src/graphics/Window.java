@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import hexagonalGrid.Hex;
+
 public class Window {
 	// creates the height and width variables
 	// private means only Window class can access them
@@ -40,5 +42,13 @@ public class Window {
 
     public void repaint(){
         canvas.repaint();
+    }
+
+    public void setFillColor(int row, int col, java.awt.Color fillColor) {
+        canvas.setFillColor(row, col, fillColor);
+    }
+
+    public void setFillColor(Hex hex, java.awt.Color fillColor) {
+        canvas.setFillColor(hex.getRow(), hex.getCol(), fillColor);
     }
 }	

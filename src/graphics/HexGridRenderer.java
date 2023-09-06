@@ -31,5 +31,9 @@ public class HexGridRenderer {
     private HexRenderer createRenderer(int row, int col) {
         return new HexRenderer(grid.get(row, col));
     }
+
+    public void setFillColor(int row, int col, java.awt.Color fillColor) {
+        get(row, col).setFillColor(fillColor);
+    }
     
 }
